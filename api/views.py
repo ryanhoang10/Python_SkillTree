@@ -17,3 +17,18 @@ from rest_framework.decorators import api_view
 def getData(request):
     person = {'name':'Ryan', 'age':25} 
     return Response(person)
+
+@api_view(['GET'])
+def testGetData(request):
+    person = {'name':'John', 'age':21} 
+    return Response(person)
+
+# get skill tree 
+# get user
+
+# post skill tree
+# post user
+
+# put skill tree
+# put user
+
