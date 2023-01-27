@@ -48,3 +48,8 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# virtualenv
+.venv
+venv/
+ENV/
