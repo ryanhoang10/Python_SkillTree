@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+
 
 # Application definition
 
@@ -83,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'skilltreedb',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': DB_PASSWORD,
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
