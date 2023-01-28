@@ -4,6 +4,8 @@ from django.shortcuts import render
 from rest_framework.response import Response
 #  takes a list of HTTP methods that your view should respond to.
 from rest_framework.decorators import api_view
+from api.models import skill_trees
+from api.serializers import SkillTreeSerializer
 
 # example
 # @api_view(['GET', 'POST'])
@@ -15,8 +17,12 @@ from rest_framework.decorators import api_view
 
 @api_view(['GET'])
 def getData(request):
-    person = {'name':'Ryan', 'age':25} 
-    return Response(person)
+    data = []
+    results = skill_trees.objects.all()
+    for result in results:
+        data.append(SkillTreeSerializer(result).data)
+    return Response(data)
+
 
 @api_view(['GET'])
 def testGetData(request):
