@@ -19,8 +19,9 @@ from api.serializers import SkillTreeSerializer
 def getData(request):
     data = []
     results = skill_trees.objects.all()
-    for result in results:
-        data.append(SkillTreeSerializer(result).data)
+    if results:
+        for result in results:
+            data.append(SkillTreeSerializer(result).data)
     return Response(data)
 
 
