@@ -23,12 +23,28 @@ def testGetData(request):
     person = {'name':'John', 'age':21} 
     return Response(person)
 
-# get skill tree 
+# get skill tree (skill_trees_nodes, comments, likes, dislikes, user) 
 # get user
 
-# post skill tree
-# post user
+# --post--
+# skill tree
+# user
+# comment
+# like, dislike
+# skill_trees_nodes
 
-# put skill tree
-# put user
+# ---put---
+# skill tree
+# user
+# comment
+# skill_trees_nodes
+
+# ---delete---
+# skill tree
+# user
+# comment
+# like
+# dislike
+# skill_trees_nodes
+
 

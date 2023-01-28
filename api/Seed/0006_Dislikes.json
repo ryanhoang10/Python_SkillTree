@@ -1,0 +1,137 @@
+[
+{
+    "model": "api.dislikes",
+    "pk": 1,
+    "fields": {
+        "user_id": 2,
+        "skill_trees_id": 6,
+        "comments_id": 10
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 2,
+    "fields": {
+        "user_id": 11,
+        "skill_trees_id": 10,
+        "comments_id": 14
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 3,
+    "fields": {
+        "user_id": 13,
+        "skill_trees_id": 10,
+        "comments_id": 11
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 4,
+    "fields": {
+        "user_id": 4,
+        "skill_trees_id": 5,
+        "comments_id": 6
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 5,
+    "fields": {
+        "user_id": 13,
+        "skill_trees_id": 10,
+        "comments_id": 10
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 6,
+    "fields": {
+        "user_id": 6,
+        "skill_trees_id": 15,
+        "comments_id": 1
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 7,
+    "fields": {
+        "user_id": 12,
+        "skill_trees_id": 8,
+        "comments_id": 15
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 8,
+    "fields": {
+        "user_id": 2,
+        "skill_trees_id": 14,
+        "comments_id": 12
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 9,
+    "fields": {
+        "user_id": 10,
+        "skill_trees_id": 2,
+        "comments_id": 2
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 10,
+    "fields": {
+        "user_id": 14,
+        "skill_trees_id": 12,
+        "comments_id": 4
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 11,
+    "fields": {
+        "user_id": 5,
+        "skill_trees_id": 5,
+        "comments_id": 8
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 12,
+    "fields": {
+        "user_id": 7,
+        "skill_trees_id": 3,
+        "comments_id": 15
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 13,
+    "fields": {
+        "user_id": 4,
+        "skill_trees_id": 9,
+        "comments_id": 12
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 14,
+    "fields": {
+        "user_id": 3,
+        "skill_trees_id": 8,
+        "comments_id": 10
+    }
+},
+{
+    "model": "api.dislikes",
+    "pk": 15,
+    "fields": {
+        "user_id": 6,
+        "skill_trees_id": 3,
+        "comments_id": 1
+    }
+}
+]

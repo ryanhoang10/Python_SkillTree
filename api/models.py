@@ -23,7 +23,7 @@ class auth_user(models.Model):
 class skill_trees(models.Model):
     class Meta:
         db_table="skill_trees"
-    tag_ids = models.ForeignKey(tags, on_delete=models.CASCADE)
+    tag_ids = models.CharField(max_length=128)
     name = models.CharField(max_length=30)
     number_of_nodes = models.IntegerField()
     completed = models.BooleanField()

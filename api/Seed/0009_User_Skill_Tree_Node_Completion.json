@@ -1,0 +1,122 @@
+[
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 1,
+    "fields": {
+        "user_id": 14,
+        "skill_trees_id": 13
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 2,
+    "fields": {
+        "user_id": 13,
+        "skill_trees_id": 7
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 3,
+    "fields": {
+        "user_id": 12,
+        "skill_trees_id": 2
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 4,
+    "fields": {
+        "user_id": 4,
+        "skill_trees_id": 13
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 5,
+    "fields": {
+        "user_id": 9,
+        "skill_trees_id": 10
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 6,
+    "fields": {
+        "user_id": 11,
+        "skill_trees_id": 5
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 7,
+    "fields": {
+        "user_id": 13,
+        "skill_trees_id": 9
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 8,
+    "fields": {
+        "user_id": 14,
+        "skill_trees_id": 9
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 9,
+    "fields": {
+        "user_id": 2,
+        "skill_trees_id": 7
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 10,
+    "fields": {
+        "user_id": 5,
+        "skill_trees_id": 16
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 11,
+    "fields": {
+        "user_id": 12,
+        "skill_trees_id": 15
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 12,
+    "fields": {
+        "user_id": 4,
+        "skill_trees_id": 10
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 13,
+    "fields": {
+        "user_id": 3,
+        "skill_trees_id": 10
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 14,
+    "fields": {
+        "user_id": 15,
+        "skill_trees_id": 7
+    }
+},
+{
+    "model": "api.user_skill_trees_node_completion",
+    "pk": 15,
+    "fields": {
+        "user_id": 8,
+        "skill_trees_id": 15
+    }
+}
+]
