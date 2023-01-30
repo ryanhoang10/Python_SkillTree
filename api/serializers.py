@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import skill_trees
 
+# because the response object cannot natively handle complex data types such as django model instances
+
 class SkillTreeSerializer(serializers.ModelSerializer):
     class Meta:
         model = skill_trees
