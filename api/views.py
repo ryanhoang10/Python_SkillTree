@@ -17,12 +17,11 @@ from api.serializers import SkillTreeSerializer
 
 @api_view(['GET'])
 def getData(request):
-    data = []
     results = skill_trees.objects.all()
     if results:
-        for result in results:
-            data.append(SkillTreeSerializer(result).data)
-    return Response(data)
+        serializer = SkillTreeSerializer(results, many=True)
+        return Response(serializer.data)
+    return Response([])
 
 
 @api_view(['GET'])
