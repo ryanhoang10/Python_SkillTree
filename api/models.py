@@ -35,7 +35,8 @@ class comments(models.Model):
         db_table="comments"
     user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
     skill_trees = models.ForeignKey(skill_trees, related_name="comments", on_delete=models.CASCADE)
-    
+    comment = models.TextField(default='SOME STRING')
+
 class likes(models.Model):
     class Meta:
         db_table="likes"
