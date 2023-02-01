@@ -3,7 +3,7 @@
     "model": "api.skill_trees",
     "pk": 1,
     "fields": {
-        "tag_ids": "1,2",
+        "tags": "1,2",
         "name": "react",
         "number_of_nodes": 10,
         "completed": true,
@@ -15,7 +15,7 @@
     "model": "api.skill_trees",
     "pk": 2,
     "fields": {
-        "tag_ids": "16, 17",
+        "tags": "16, 17",
         "name": "Project total name minute.",
         "number_of_nodes": 5,
         "completed": true,
@@ -27,7 +27,7 @@
     "model": "api.skill_trees",
     "pk": 3,
     "fields": {
-        "tag_ids": "12",
+        "tags": "12",
         "name": "Approach usually technology.",
         "number_of_nodes": 6,
         "completed": true,
@@ -39,7 +39,7 @@
     "model": "api.skill_trees",
     "pk": 4,
     "fields": {
-        "tag_ids": "1,2,3",
+        "tags": "1,2,3",
         "name": "Save job dinner.",
         "number_of_nodes": 5,
         "completed": false,
@@ -51,7 +51,7 @@
     "model": "api.skill_trees",
     "pk": 5,
     "fields": {
-        "tag_ids": "4,5,6",
+        "tags": "4,5,6",
         "name": "Test open join full.",
         "number_of_nodes": 7,
         "completed": true,
@@ -63,7 +63,7 @@
     "model": "api.skill_trees",
     "pk": 6,
     "fields": {
-        "tag_ids": "4",
+        "tags": "4",
         "name": "Return most rate.",
         "number_of_nodes": 9,
         "completed": true,
@@ -75,7 +75,7 @@
     "model": "api.skill_trees",
     "pk": 7,
     "fields": {
-        "tag_ids": "3",
+        "tags": "3",
         "name": "Set into child church front.",
         "number_of_nodes": 8,
         "completed": false,
@@ -87,7 +87,7 @@
     "model": "api.skill_trees",
     "pk": 8,
     "fields": {
-        "tag_ids": "5",
+        "tags": "5",
         "name": "Turn where read Mrs.",
         "number_of_nodes": 11,
         "completed": false,
@@ -99,7 +99,7 @@
     "model": "api.skill_trees",
     "pk": 9,
     "fields": {
-        "tag_ids": "4",
+        "tags": "4",
         "name": "Third happy talk low.",
         "number_of_nodes": 12,
         "completed": true,
@@ -111,7 +111,7 @@
     "model": "api.skill_trees",
     "pk": 10,
     "fields": {
-        "tag_ids": "12",
+        "tags": "12",
         "name": "Woman everything mind still.",
         "number_of_nodes": 4,
         "completed": false,
@@ -123,7 +123,7 @@
     "model": "api.skill_trees",
     "pk": 11,
     "fields": {
-        "tag_ids": "11",
+        "tags": "11",
         "name": "Know red artist four.",
         "number_of_nodes": 3,
         "completed": false,
@@ -135,7 +135,7 @@
     "model": "api.skill_trees",
     "pk": 12,
     "fields": {
-        "tag_ids": "11",
+        "tags": "11",
         "name": "Create prevent yet beyond.",
         "number_of_nodes": 3,
         "completed": true,
@@ -147,7 +147,7 @@
     "model": "api.skill_trees",
     "pk": 13,
     "fields": {
-        "tag_ids": "10",
+        "tags": "10",
         "name": "Safe past window body.",
         "number_of_nodes": 4,
         "completed": true,
@@ -159,7 +159,7 @@
     "model": "api.skill_trees",
     "pk": 14,
     "fields": {
-        "tag_ids": "9",
+        "tags": "9",
         "name": "Southern talk around.",
         "number_of_nodes": 14,
         "completed": false,
@@ -171,7 +171,7 @@
     "model": "api.skill_trees",
     "pk": 15,
     "fields": {
-        "tag_ids": "8",
+        "tags": "8",
         "name": "Nation common fill him.",
         "number_of_nodes": 6,
         "completed": true,
@@ -183,7 +183,7 @@
     "model": "api.skill_trees",
     "pk": 16,
     "fields": {
-        "tag_ids": "7,8",
+        "tags": "7,8",
         "name": "Rest six top.",
         "number_of_nodes": 7,
         "completed": false,
