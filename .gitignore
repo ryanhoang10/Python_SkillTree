@@ -60,4 +60,3 @@ ENV/
 #D-ricks seed stuff
 api/Seed/generateMasterSeed.py
 api/Seed/master_seed_list.json
-venv/
