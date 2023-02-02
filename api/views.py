@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from api.models import skill_trees, comments, auth_user, likes, dislikes, skill_trees_nodes
-from api.serializers import SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer, SkillTreesNodesSerializer2
+from api.serializers import SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -173,15 +173,6 @@ def skillTreeNodeDetails(request, pk):
     elif request.method == 'DELETE':
         skillTreeNode.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-@api_view(['GET'])
-def skillTreeNodeGrabAll(request):
-    try:
-        skillTreeNodes = skill_trees_nodes.objects.all()
-        serializer = SkillTreesNodesSerializer2(skillTreeNodes, many=True)
-        return Response(serializer.data)
-    except skill_trees_nodes.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
 # get skill tree 🐱‍👤
 # (skill_trees_nodes 🐱‍🏍, comments, likes 🐱‍🏍, dislikes 🐱‍🏍, user)

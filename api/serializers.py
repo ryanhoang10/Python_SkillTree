@@ -4,6 +4,7 @@ from .models import skill_trees, comments, auth_user, likes, dislikes, skill_tre
 # because the response object cannot natively handle complex data types such as django model instances
 
 class UserSerializer(serializers.ModelSerializer):
+    # skilltree - d
     class Meta:
         model = auth_user
         fields = '__all__'
@@ -41,12 +42,29 @@ class SkillTreeSerializer(serializers.ModelSerializer):
 
 
 class SkillTreesNodesSerializer(serializers.ModelSerializer):
+    # skilltree - d
+    # user - d
+
+    # {
+    #     skill tree : { skill tree info in here} // top level 
+    #     
+    # }
+
+    # skill_tree_node :{
+    #   parent_skill_trees_node: {
+    #           2 : {
+    #           name:
+    #           description
+    #       }
+    #   }
+    # }
+
+        
+
     class Meta:
         model = skill_trees_nodes
         fields = '__all__'
 
 
-class SkillTreesNodesSerializer2(serializers.ModelSerializer):
-    class Meta:
-        model = skill_trees_nodes
-        fields = ['id', 'completed_nodes']
+
+

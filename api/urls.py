@@ -11,5 +11,4 @@ urlpatterns = [
     path('likes/<int:pk>/', views.likeDetails),
     path('dislikes/<int:pk>/', views.dislikeDetails),
     path('skill_trees_nodes/<int:pk>/', views.skillTreeNodeDetails),
-    path('skill_trees_nodes', views.skillTreeNodeGrabAll),
 ]

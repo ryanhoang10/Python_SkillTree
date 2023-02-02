@@ -29,6 +29,7 @@ class skill_trees(models.Model):
     completed = models.BooleanField()
     created_at = models.DateTimeField(max_length=30)
     user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
+    description = models.CharField(max_length=128)
 
 class comments(models.Model):
     class Meta:
@@ -71,3 +72,5 @@ class user_skill_trees_node_completion(models.Model):
         db_table="user_skill_trees_node_completion"
     user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
     skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=128)
