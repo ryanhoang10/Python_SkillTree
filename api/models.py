@@ -41,15 +41,15 @@ class likes(models.Model):
     class Meta:
         db_table="likes"
     user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
-    skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE)
-    comments = models.ForeignKey(comments, on_delete=models.CASCADE)
+    skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE,null=True)
+    comments = models.ForeignKey(comments, on_delete=models.CASCADE, null=True)
 
 class dislikes(models.Model):
     class Meta:
         db_table="dislikes"
     user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
-    skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE)
-    comments = models.ForeignKey(comments, on_delete=models.CASCADE)
+    skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE, null=True)
+    comments = models.ForeignKey(comments, on_delete=models.CASCADE, null=True)
 
 class progress(models.Model):
     class Meta:
