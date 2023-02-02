@@ -8,4 +8,8 @@ urlpatterns = [
     path('users', views.usersList),
     path('user/<int:pk>/', views.userDetails),
     path('comment/<int:pk>/', views.commentDetails),
+    path('likes/<int:pk>/', views.likeDetails),
+    path('dislikes/<int:pk>/', views.dislikeDetails),
+    path('skill_trees_nodes/<int:pk>/', views.skillTreeNodeDetails),
+    path('skill_trees_nodes', views.skillTreeNodeGrabAll),
 ]

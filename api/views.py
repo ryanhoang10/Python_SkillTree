@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from api.models import skill_trees, comments, auth_user
-from api.serializers import SkillTreeSerializer, UserSerializer, CommentSerializer
+from api.models import skill_trees, comments, auth_user, likes, dislikes, skill_trees_nodes
+from api.serializers import SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer, SkillTreesNodesSerializer2
 
 
 @api_view(['GET', 'POST'])
@@ -103,27 +103,107 @@ def commentDetails(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+
+# TODO LIST Likes and dislikes
+#   - Do we need to check for duplicates it ensure that each user can only like/dislike once?
+#   - Should a user not be able to both like and dislike a skilltree?
+#   -
+@api_view(['GET','POST', 'DELETE'])
+def likeDetails(request, pk):
+    try:
+        like = likes.objects.get(pk=pk)
+    except like.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = LikesSerializer(like)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = LikesSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        like.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET','POST', 'DELETE'])
+def dislikeDetails(request, pk):
+    try:
+        dislike = dislikes.objects.get(pk=pk)
+    except dislike.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = DislikesSerializer(dislike)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = DislikesSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        dislike.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET','POST', 'PUT', 'DELETE'])
+def skillTreeNodeDetails(request, pk):
+    try:
+        skillTreeNode = skill_trees_nodes.objects.get(pk=pk)
+    except skill_trees_nodes.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = SkillTreesNodesSerializer(skillTreeNode)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = SkillTreesNodesSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'PUT':
+        serializer = SkillTreesNodesSerializer(skillTreeNode, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        skillTreeNode.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def skillTreeNodeGrabAll(request):
+    try:
+        skillTreeNodes = skill_trees_nodes.objects.all()
+        serializer = SkillTreesNodesSerializer2(skillTreeNodes, many=True)
+        return Response(serializer.data)
+    except skill_trees_nodes.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
 # get skill tree 🐱‍👤
-# (skill_trees_nodes, comments, likes, dislikes, user)
+# (skill_trees_nodes 🐱‍🏍, comments, likes 🐱‍🏍, dislikes 🐱‍🏍, user)
 # get user - r 🐱‍👤
 
 # --post--
 # skill tree 🐱‍👤
 # user - r 🐱‍👤
 # comment - r 🐱‍👤
-# like, dislike -d
-# skill_trees_nodes -d
+# like, dislike -d 🐱‍🏍
+# skill_trees_nodes -d 🐱‍🏍
 
 # ---put---
 # skill tree 🐱‍👤
 # user 🐱‍👤
 # comment 🐱‍👤
-# skill_trees_nodes
+# skill_trees_nodes 🐱‍🏍
 
 # ---delete---
 # skill tree 🐱‍👤
 # user 🐱‍👤
 # comment 🐱‍👤
-# like
-# dislike
-# skill_trees_nodes
+# like 🐱‍🏍
+# dislike 🐱‍🏍
+# skill_trees_nodes 🐱‍🏍
