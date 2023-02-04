@@ -3,17 +3,17 @@
     "model": "api.likes",
     "pk": 1,
     "fields": {
-        "user_id": 16,
+        "user_id": 1,
         "skill_trees_id": null,
-        "comments_id": 5
+        "comments_id": 1
     }
 },
 {
     "model": "api.likes",
     "pk": 2,
     "fields": {
-        "user_id": 5,
-        "skill_trees_id": 14,
+        "user_id": 1,
+        "skill_trees_id": 1,
         "comments_id": null
     }
 },
@@ -21,17 +21,17 @@
     "model": "api.likes",
     "pk": 3,
     "fields": {
-        "user_id": 6,
+        "user_id": 2,
         "skill_trees_id": null,
-        "comments_id": 4
+        "comments_id": 2
     }
 },
 {
     "model": "api.likes",
     "pk": 4,
     "fields": {
-        "user_id": 15,
-        "skill_trees_id": 11,
+        "user_id": 2,
+        "skill_trees_id": 2,
         "comments_id": null
     }
 },
@@ -39,17 +39,17 @@
     "model": "api.likes",
     "pk": 5,
     "fields": {
-        "user_id": 8,
+        "user_id": 3,
         "skill_trees_id": null,
-        "comments_id": 14
+        "comments_id": 3
     }
 },
 {
     "model": "api.likes",
     "pk": 6,
     "fields": {
-        "user_id": 14,
-        "skill_trees_id": 16,
+        "user_id": 3,
+        "skill_trees_id": 3,
         "comments_id": null
     }
 },
@@ -59,15 +59,15 @@
     "fields": {
         "user_id": 5,
         "skill_trees_id": null,
-        "comments_id": 4
+        "comments_id": 3
     }
 },
 {
     "model": "api.likes",
     "pk": 8,
     "fields": {
-        "user_id": 13,
-        "skill_trees_id": 9,
+        "user_id": 2,
+        "skill_trees_id": 1,
         "comments_id": null
     }
 },
@@ -75,17 +75,17 @@
     "model": "api.likes",
     "pk": 9,
     "fields": {
-        "user_id": 11,
+        "user_id": 1,
         "skill_trees_id": null,
-        "comments_id": 6
+        "comments_id": 1
     }
 },
 {
     "model": "api.likes",
     "pk": 10,
     "fields": {
-        "user_id": 6,
-        "skill_trees_id": 9,
+        "user_id": 2,
+        "skill_trees_id": 3,
         "comments_id": null
     }
 },
@@ -93,17 +93,17 @@
     "model": "api.likes",
     "pk": 11,
     "fields": {
-        "user_id": 12,
+        "user_id": 4,
         "skill_trees_id": null,
-        "comments_id": 13
+        "comments_id": 4
     }
 },
 {
     "model": "api.likes",
     "pk": 12,
     "fields": {
-        "user_id": 10,
-        "skill_trees_id": 13,
+        "user_id": 2,
+        "skill_trees_id": 2,
         "comments_id": null
     }
 },
@@ -111,7 +111,7 @@
     "model": "api.likes",
     "pk": 13,
     "fields": {
-        "user_id": 10,
+        "user_id": 2,
         "skill_trees_id": null,
         "comments_id": 5
     }
@@ -129,9 +129,9 @@
     "model": "api.likes",
     "pk": 15,
     "fields": {
-        "user_id": 14,
+        "user_id": 2,
         "skill_trees_id": null,
-        "comments_id": 10
+        "comments_id": 2
     }
 }
 ]
