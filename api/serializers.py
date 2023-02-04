@@ -22,23 +22,56 @@ class DislikesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CommentSerializer(serializers.ModelSerializer):
-    likes = LikesSerializer(read_only=True, many=True)
+    likes = serializers.SerializerMethodField(read_only=True)
+    dislikes = serializers.SerializerMethodField(read_only=True)
+
+    def get_likes(self, obj):
+        comment = obj
+        comment_likes = comment.likes_set.all()
+        return LikesSerializer(comment_likes, many=True).data
+
+    def get_dislikes(self, obj):
+        comment = obj
+        comment_dislikes = comment.dislikes_set.all()
+        return DislikesSerializer(comment_dislikes, many=True).data
 
     class Meta:
         model = comments
-        fields = ['id', 'comment', 'skill_trees_id', 'user_id', 'likes']
+        fields = ['id', 'comment', 'skill_trees_id', 'user_id', 'likes', 'dislikes']
 
 
 class SkillTreeSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     comments = CommentSerializer(read_only=True, many=True)
-    likes = LikesSerializer(read_only=True, many=True)
-    dislikes = DislikesSerializer(read_only=True, many=True)
+    comments_count = serializers.SerializerMethodField(read_only=True)
+    likes = serializers.SerializerMethodField(read_only=True)
+    likes_count = serializers.SerializerMethodField()
+    dislikes = serializers.SerializerMethodField(read_only=True)
+    dislikes_count = serializers.SerializerMethodField()
+
+    def get_comments_count(self, obj):
+        return obj.comments.count()
+
+    def get_likes(self, obj):
+        skill_tree = obj
+        skill_tree_likes = skill_tree.likes_set.all()
+        return LikesSerializer(skill_tree_likes, many=True).data
+
+    def get_likes_count(self, obj):
+        return obj.likes_set.count()
+
+    def get_dislikes(self, obj):
+        skill_tree = obj
+        skill_tree_dislikes = skill_tree.dislikes_set.all()
+        return DislikesSerializer(skill_tree_dislikes, many=True).data
+
+    def get_dislikes_count(self, obj):
+        return obj.dislikes_set.count()
+    
 
     class Meta:
         model = skill_trees
-        fields = ['id', 'tags', 'name', 'number_of_nodes',
-                  'completed', 'created_at', 'user', 'comments', 'likes', 'dislikes']
+        fields = ['id', 'tags', 'name', 'number_of_nodes', 'completed', 'created_at', 'user', 'comments', 'comments_count', 'likes', 'likes_count', 'dislikes', 'dislikes_count']
 
 
 class SkillTreesNodesSerializer(serializers.ModelSerializer):

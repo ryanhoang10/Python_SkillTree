@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -108,7 +107,7 @@ def commentDetails(request, pk):
 #   - Do we need to check for duplicates it ensure that each user can only like/dislike once?
 #   - Should a user not be able to both like and dislike a skilltree?
 #   -
-@api_view(['GET','POST', 'DELETE'])
+@api_view(['GET', 'POST', 'DELETE'])
 def likeDetails(request, pk):
     try:
         like = likes.objects.get(pk=pk)
@@ -128,7 +127,7 @@ def likeDetails(request, pk):
         like.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['GET','POST', 'DELETE'])
+@api_view(['GET', 'POST', 'DELETE'])
 def dislikeDetails(request, pk):
     try:
         dislike = dislikes.objects.get(pk=pk)
@@ -173,28 +172,3 @@ def skillTreeNodeDetails(request, pk):
     elif request.method == 'DELETE':
         skillTreeNode.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-# get skill tree 🐱‍👤
-# (skill_trees_nodes 🐱‍🏍, comments, likes 🐱‍🏍, dislikes 🐱‍🏍, user)
-# get user - r 🐱‍👤
-
-# --post--
-# skill tree 🐱‍👤
-# user - r 🐱‍👤
-# comment - r 🐱‍👤
-# like, dislike -d 🐱‍🏍
-# skill_trees_nodes -d 🐱‍🏍
-
-# ---put---
-# skill tree 🐱‍👤
-# user 🐱‍👤
-# comment 🐱‍👤
-# skill_trees_nodes 🐱‍🏍
-
-# ---delete---
-# skill tree 🐱‍👤
-# user 🐱‍👤
-# comment 🐱‍👤
-# like 🐱‍🏍
-# dislike 🐱‍🏍
-# skill_trees_nodes 🐱‍🏍
