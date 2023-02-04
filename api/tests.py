@@ -1,6 +1,6 @@
-from rest_framework.test import APITestCase, APIRequestFactory, TestCase
-from .views import skillTreeDetails
-from django.urls import reverse
+from rest_framework.test import APITestCase, APIRequestFactory
+# from .views import skillTreeDetails
+# from django.urls import reverse
 from rest_framework import status
 
 
