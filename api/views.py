@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from api.models import skill_trees, comments, auth_user, likes, dislikes, skill_trees_nodes
-from api.serializers import SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer
+from api.serializers import CreateSkillTreeSerializer, SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -12,7 +12,7 @@ def skillsTreeList(request):
         serializer = SkillTreeSerializer(skillTrees, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        serializer = SkillTreeSerializer(data=request.data)
+        serializer = CreateSkillTreeSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
