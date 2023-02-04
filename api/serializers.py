@@ -53,16 +53,14 @@ class SkillTreeSerializer(serializers.ModelSerializer):
         return obj.comments.count()
 
     def get_likes(self, obj):
-        skill_tree = obj
-        skill_tree_likes = skill_tree.likes_set.all()
+        skill_tree_likes = obj.likes_set.all()
         return LikesSerializer(skill_tree_likes, many=True).data
 
     def get_likes_count(self, obj):
         return obj.likes_set.count()
 
     def get_dislikes(self, obj):
-        skill_tree = obj
-        skill_tree_dislikes = skill_tree.dislikes_set.all()
+        skill_tree_dislikes = obj.dislikes_set.all()
         return DislikesSerializer(skill_tree_dislikes, many=True).data
 
     def get_dislikes_count(self, obj):
