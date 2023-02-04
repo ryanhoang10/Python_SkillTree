@@ -37,6 +37,11 @@ class CommentSerializer(serializers.ModelSerializer):
         model = comments
         fields = ['id', 'comment', 'skill_trees_id', 'user_id', 'likes', 'dislikes']
 
+class CreateSkillTreeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = skill_trees
+        fields = '__all__'
+
 
 class SkillTreeSerializer(serializers.ModelSerializer):
     user = UserSerializer()
@@ -45,7 +50,7 @@ class SkillTreeSerializer(serializers.ModelSerializer):
     likes = serializers.SerializerMethodField(read_only=True)
     likes_count = serializers.SerializerMethodField()
     dislikes = serializers.SerializerMethodField(read_only=True)
-    dislikes_count = serializers.SerializerMethodField()
+    dislikes_count = serializers.SerializerMethodField(read_only=True)
 
     def get_comments_count(self, obj):
         return obj.comments.count()
@@ -67,7 +72,7 @@ class SkillTreeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = skill_trees
-        fields = ['id', 'tags', 'name', 'number_of_nodes', 'completed', 'created_at', 'user', 'comments', 'comments_count', 'likes', 'likes_count', 'dislikes', 'dislikes_count']
+        fields = ['id', 'tags', 'name', 'description', 'number_of_nodes', 'completed', 'created_at', 'user', 'comments', 'comments_count', 'likes', 'likes_count', 'dislikes', 'dislikes_count']
 
 
 class SkillTreesNodesSerializer(serializers.ModelSerializer):
