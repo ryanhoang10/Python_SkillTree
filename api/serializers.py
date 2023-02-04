@@ -26,13 +26,11 @@ class CommentSerializer(serializers.ModelSerializer):
     dislikes = serializers.SerializerMethodField(read_only=True)
 
     def get_likes(self, obj):
-        comment = obj
-        comment_likes = comment.likes_set.all()
+        comment_likes = obj.likes_set.all()
         return LikesSerializer(comment_likes, many=True).data
 
     def get_dislikes(self, obj):
-        comment = obj
-        comment_dislikes = comment.dislikes_set.all()
+        comment_dislikes = obj.dislikes_set.all()
         return DislikesSerializer(comment_dislikes, many=True).data
 
     class Meta:
