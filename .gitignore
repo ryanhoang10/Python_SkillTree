@@ -58,5 +58,5 @@ ENV/
 .env
 
 #D-ricks seed stuff
-api/Seed/generateMasterSeed.py
+generateMasterSeed.py
 api/Seed/master_seed_list.json
