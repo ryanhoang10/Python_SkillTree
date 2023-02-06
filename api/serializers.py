@@ -21,6 +21,11 @@ class DislikesSerializer(serializers.ModelSerializer):
         model = dislikes
         fields = '__all__'
 
+class CreateCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = comments
+        fields = '__all__'
+
 class CommentSerializer(serializers.ModelSerializer):
     likes = serializers.SerializerMethodField(read_only=True)
     dislikes = serializers.SerializerMethodField(read_only=True)
