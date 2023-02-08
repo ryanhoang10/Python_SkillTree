@@ -7,6 +7,7 @@ urlpatterns = [
     path('skilltrees/<int:pk>/', views.skillTreeDetails),
     path('users', views.usersList),
     path('users/<int:pk>/', views.userDetails),
+    path('comments', views.commentList),
     path('comments/<int:pk>/', views.commentDetails),
     path('likes/<int:pk>/', views.likeDetails),
     path('dislikes/<int:pk>/', views.dislikeDetails),

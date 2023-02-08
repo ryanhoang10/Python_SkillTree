@@ -2,8 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from api.models import skill_trees, comments, auth_user, likes, dislikes, skill_trees_nodes
-from api.serializers import CreateSkillTreeSerializer, SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer
-
+from api.serializers import CreateCommentSerializer, CreateSkillTreeSerializer, SkillTreeSerializer, UserSerializer, CommentSerializer, LikesSerializer, DislikesSerializer, SkillTreesNodesSerializer
 
 @api_view(['GET', 'POST'])
 def skillsTreeList(request):
@@ -16,6 +15,7 @@ def skillsTreeList(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -78,6 +78,19 @@ def userDetails(request, pk):
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['GET', 'POST'])
+def commentList(request):
+    if request.method == 'GET':
+        comment = comments.objects.all()
+        serializer = CommentSerializer(comment, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = CreateCommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def commentDetails(request, pk):
