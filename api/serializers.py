@@ -9,6 +9,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = auth_user
         fields = '__all__'
 
+class UsernameUserSerializer(serializers.ModelSerializer):
+    # skilltree - d
+    class Meta:
+        model = auth_user
+        fields = ['username']
 
 class LikesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,7 +46,6 @@ class CreateSkillTreeSerializer(serializers.ModelSerializer):
     class Meta:
         model = skill_trees
         fields = '__all__'
-
 
 class SkillTreeSerializer(serializers.ModelSerializer):
     user = UserSerializer()
@@ -76,28 +80,15 @@ class SkillTreeSerializer(serializers.ModelSerializer):
 
 
 class SkillTreesNodesSerializer(serializers.ModelSerializer):
-    # skilltree - d
-    # user - d
+    user = UsernameUserSerializer()
 
-    # {
-    #     skill tree : { skill tree info in here} // top level 
-    #     
-    # }
-
-    # skill_tree_node :{
-    #   parent_skill_trees_node: {
-    #           2 : {
-    #           name:
-    #           description
-    #       }
-    #   }
-    # }
-
-        
+    parent_node = serializers.SerializerMethodField(read_only=True)
+    def get_parent_node(self, obj):
+        return obj.parent_skill_trees_node
 
     class Meta:
         model = skill_trees_nodes
-        fields = '__all__'
+        fields = ['id', 'completed_nodes', 'parent_node', 'user']
 
 
 

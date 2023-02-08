@@ -60,12 +60,25 @@ class progress(models.Model):
     completed_nodes = models.IntegerField()
 
 class skill_trees_nodes(models.Model):
+    def __str__(self):
+        return "skill_trees: %s  name: %s  completed_nodes: %s  parent_skill_trees_node: %s " % (self.skill_trees.name, self.user.username, str(self.completed_nodes), str(self.parent_skill_trees_node))
     class Meta:
         db_table="skill_trees_nodes"
+    @property
+    def get_node_info(self):
+        return {
+            "id": self.pk,
+            "skill_trees": self.skill_trees.name,
+            "user": self.user.username,
+            "completed_nodes": self.completed_nodes,
+            "parent_skill_trees_node": self.parent_skill_trees_node,
+        }
     skill_trees = models.ForeignKey(skill_trees, on_delete=models.CASCADE)
-    name = models.ForeignKey(auth_user, on_delete=models.CASCADE)
+    user = models.ForeignKey(auth_user, on_delete=models.CASCADE)
     completed_nodes = models.IntegerField()
-    parent_skill_trees_node = models.IntegerField()
+    parent_skill_trees_node = models.IntegerField(null=True)
+    title = models.CharField(max_length=30)
+    description = models.CharField(max_length=250)
 
 class user_skill_trees_node_completion(models.Model):
     class Meta:

@@ -155,6 +155,7 @@ def skillTreeNodeDetails(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
+        skillTreeNode.parent_skill_trees_node = skill_trees_nodes.objects.get(pk=skillTreeNode.parent_skill_trees_node).get_node_info
         serializer = SkillTreesNodesSerializer(skillTreeNode)
         return Response(serializer.data)
     elif request.method == 'POST':
